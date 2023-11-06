@@ -1,0 +1,18 @@
+{
+  "name": "dkd-customization-kit",
+  "description": "TYPO3 customization kit",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/dkd-hauser/customization_kit"
+  },
+  "homepage": "https://dkd.de",
+  "author": "Oliver Hauser",
+  "version": "1.0.0",
+  "license": "GPL-2.0-or-later",
+  "devDependencies": {
+    "grunt": "^1.0.3",
+    "grunt-contrib-uglify": "^4.0.0",
+    "grunt-contrib-watch": "^1.1.0",
+    "grunt-contrib-imagemin": "^2.0.1"
+  }
+}
