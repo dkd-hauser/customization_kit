@@ -1,4 +1,9 @@
-base: /
+rootPageId: 1
+base: 'https://admin.siva-creative.de/'
+baseVariants:
+  -
+    base: 'https://customization-kit.ddev.site/'
+    condition: 'applicationContext == "Development/DDEV"'
 errorHandling:
   -
     errorCode: 404
@@ -16,7 +21,8 @@ languages:
     navigationTitle: English
     hreflang: en-US
     direction: ''
-    flag: en
+    flag: en-us-gb
+    websiteTitle: ''
   -
     title: German
     enabled: true
@@ -31,5 +37,4 @@ languages:
     fallbackType: fallback
     fallbacks: '1,0'
     flag: de
-rootPageId: 1
 websiteTitle: 'TYPO3 Customization Kit'
