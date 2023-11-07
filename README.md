@@ -1,4 +1,4 @@
-Sitepackage for the project "customization kit"
+TYPO3 12 - customization kit
 ==============================================================
 
-Add some explanation here.
+DDEV Environment // Sitepackage + Customization Kit for TYPO3 12
