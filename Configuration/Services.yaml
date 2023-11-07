@@ -1,0 +1,16 @@
+# Configuration/Services.yaml
+services:
+    _defaults:
+        autowire: true
+        autoconfigure: true
+        public: false
+
+    Dkd\CustomizationKit\:
+        resource: '../Classes/*'
+    Dkd\CustomizationKit\SystemInformation\ProjectVersion:
+        tags:
+            - name: event.listener
+              identifier: 'tx-dkd-customization-kit-version'
+              method: 'appendMessage'
+              event: TYPO3\CMS\Backend\Backend\Event\SystemInformationToolbarCollectorEvent
+

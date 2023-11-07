@@ -2,7 +2,16 @@
 return array (
   'customization' => 
   array (
-    'base' => '/',
+    'rootPageId' => 1,
+    'base' => 'https://admin.siva-creative.de/',
+    'baseVariants' => 
+    array (
+      0 => 
+      array (
+        'base' => 'https://customization-kit.ddev.site/',
+        'condition' => 'applicationContext == "Development/DDEV"',
+      ),
+    ),
     'errorHandling' => 
     array (
       0 => 
@@ -19,32 +28,17 @@ return array (
         'title' => 'English',
         'enabled' => true,
         'languageId' => 0,
-        'base' => '/',
+        'base' => '/en/',
         'typo3Language' => 'default',
         'locale' => 'en_US.UTF-8',
         'iso-639-1' => 'en',
         'navigationTitle' => 'English',
         'hreflang' => 'en-US',
         'direction' => '',
-        'flag' => 'us',
+        'flag' => 'en-us-gb',
+        'websiteTitle' => '',
       ),
       1 => 
-      array (
-        'title' => 'Dansk',
-        'enabled' => true,
-        'languageId' => 2,
-        'base' => '/da/',
-        'typo3Language' => 'da',
-        'locale' => 'da_DK.UTF-8',
-        'iso-639-1' => 'da',
-        'navigationTitle' => 'Dansk',
-        'hreflang' => 'da-DK',
-        'direction' => '',
-        'fallbackType' => 'fallback',
-        'fallbacks' => '',
-        'flag' => 'dk',
-      ),
-      2 => 
       array (
         'title' => 'German',
         'enabled' => true,
@@ -61,7 +55,6 @@ return array (
         'flag' => 'de',
       ),
     ),
-    'rootPageId' => 1,
     'websiteTitle' => 'TYPO3 Customization Kit',
   ),
 );
