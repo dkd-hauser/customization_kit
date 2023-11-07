@@ -1,0 +1,31 @@
+#!/usr/bin/env bash
+
+set -e
+
+## Description: Generate golden master
+## Usage: golden-master-generate
+## Example: "ddev golden-master-generate"
+
+#ddev typo3-cleanup
+
+# Update assets
+#ASSETS=( fileadmin )
+#for FOLDER in "${ASSETS[@]}"; do
+#  echo "Copy files from '${DDEV_DOCROOT}/${FOLDER}/' to 'config/preseed/${FOLDER}' via rsync"
+#  ddev exec rsync -ra --delete --exclude-from='config/assets_exclude_file.txt' "${DDEV_DOCROOT}/${FOLDER}/" "config/preseed/${FOLDER}"
+#done
+
+echo 'Generate "config/preseed/default_structure.sql.gz"'
+ddev mysqldump db --no-data --skip-set-charset --no-tablespaces | gzip > 'config/preseed/default_structure.sql.gz'
+ddev mutagen sync
+ddev exec sed -i -E "'s/ AUTO_INCREMENT=[0-9]+//g'" "config/preseed/default_structure.sql.gz"
+
+IGNORE_COMMAND_ARGUMENT=()
+while IFS= read -r DB_EXCLUDE; do
+  IGNORE_COMMAND_ARGUMENT+=("--ignore-table=db.$DB_EXCLUDE");
+done < config/db_exclude_file.txt
+
+echo 'Generate "config/preseed/default_content.sql.gz"'
+ddev mysqldump db --skip-set-charset --no-tablespaces "${IGNORE_COMMAND_ARGUMENT[@]}" | gzip > 'config/preseed/default_content.sql.gz'
+ddev mutagen sync
+ddev exec sed -i -E "'s/ AUTO_INCREMENT=[0-9]+//g'" 'config/preseed/default_content.sql.gz'

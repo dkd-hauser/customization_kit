@@ -1,0 +1,14 @@
+#!/usr/bin/env bash
+
+set -e
+
+## Description: Import golden master
+## Usage: golden-master-import
+## Example: "ddev golden-master-import"
+
+echo "Import golden master"
+ddev import-db --file=config/preseed/default_structure.sql.gz
+ddev import-db --file=config/preseed/default_content.sql.gz --no-drop
+
+# not used because storage is a mounted s3 aws
+# ddev import-files --src=config/preseed/fileadmin/
