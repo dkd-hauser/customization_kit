@@ -5,9 +5,15 @@ t3 customization kit
 
 ----
 
- DDEV Environment | Sitepackage  | Customization Kit for TYPO3 12 
+ DDEV Environment  -  Deployment Workflow  -  Sitepackage  & Customization Kit  -  designed for TYPO3 12 
 
-![MIT License](https://img.shields.io/badge/8.1-PHP-green.svg)  ![12](https://img.shields.io/badge/12.5-TYPO3-orange.svg)  ![AGPL License](https://img.shields.io/badge/1.19-DDEV-blue.svg)
+![MIT License](https://img.shields.io/badge/8.1-PHP-green.svg)  ![12](https://img.shields.io/badge/12.4-TYPO3-orange.svg)  ![AGPL License](https://img.shields.io/badge/1.19-DDEV-blue.svg)
+
+----
+
+
+![logos](https://github.com/dkd-hauser/customization_kit/assets/61793007/313c6649-8557-4d9f-ad5e-a13e4b80d5cf)
+
 
 
 ---
