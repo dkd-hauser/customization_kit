@@ -12,16 +12,16 @@ return [
         'Connections' => [
             'Default' => [
                 'charset' => 'utf8mb4',
-                'dbname' => 'db',
+                'dbname' => '',
                 'driver' => 'mysqli',
-                'host' => 'db',
-                'password' => 'db',
+                'host' => '',
+                'password' => '',
                 'port' => 3306,
                 'tableoptions' => [
                     'charset' => 'utf8mb4',
                     'collate' => 'utf8mb4_unicode_ci',
                 ],
-                'user' => 'db',
+                'user' => '',
             ],
         ],
     ],
@@ -149,7 +149,7 @@ return [
         'displayErrors' => 0,
         'encryptionKey' => '8575a5b01135330130c9986fa6925eaa99aa34e8285e4e9d41480584224a9a1cfbd29cf298abe5d68adeec5b8dfeaf9b',
         'exceptionalErrors' => 4096,
-        'sitename' => 'TYPO3 Custimization Kit',
+        'sitename' => 'TYPO3 Customization Kit',
         'systemMaintainers' => [
             1,
             2,

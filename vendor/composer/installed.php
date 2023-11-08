@@ -3,7 +3,7 @@
         'name' => 'dkd/customization-kit',
         'pretty_version' => 'dev-master',
         'version' => 'dev-master',
-        'reference' => '7d4826e093f2ecaa4900b7f73e74e52035592351',
+        'reference' => '07e823415e270a3fda697712b6a830a7b1d8fcd2',
         'type' => 'typo3-cms-extension',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
@@ -55,7 +55,7 @@
         'dkd/customization-kit' => array(
             'pretty_version' => 'dev-master',
             'version' => 'dev-master',
-            'reference' => '7d4826e093f2ecaa4900b7f73e74e52035592351',
+            'reference' => '07e823415e270a3fda697712b6a830a7b1d8fcd2',
             'type' => 'typo3-cms-extension',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),

@@ -59,6 +59,7 @@ class DependencyInjectionContainer_5684150283a31947276bdb69f993849693b74605 exte
             'BK2K\\BootstrapPackage\\ViewHelpers\\Link\\LightboxViewHelper' => 'getLightboxViewHelperService',
             'BK2K\\BootstrapPackage\\ViewHelpers\\Link\\PaginateViewHelper' => 'getPaginateViewHelper2Service',
             'BK2K\\BootstrapPackage\\ViewHelpers\\TypoScript\\ConstantViewHelper' => 'getConstantViewHelperService',
+            'Dkd\\CustomizationKit\\SystemInformation\\ProjectVersion' => 'getProjectVersionService',
             'Masterminds\\HTML5' => 'getHTML5Service',
             'Psr\\EventDispatcher\\EventDispatcherInterface_decorated_1' => 'getEventDispatcherInterfaceDecorated1Service',
             'Psr\\Http\\Client\\ClientInterface' => 'getClientInterfaceService',
@@ -4824,6 +4825,16 @@ class DependencyInjectionContainer_5684150283a31947276bdb69f993849693b74605 exte
     }
 
     /**
+     * Gets the public 'Dkd\CustomizationKit\SystemInformation\ProjectVersion' shared autowired service.
+     *
+     * @return \Dkd\CustomizationKit\SystemInformation\ProjectVersion
+     */
+    protected static function getProjectVersionService($container)
+    {
+        return $container->services['Dkd\\CustomizationKit\\SystemInformation\\ProjectVersion'] = \TYPO3\CMS\Core\Utility\GeneralUtility::makeInstanceForDi(\Dkd\CustomizationKit\SystemInformation\ProjectVersion::class);
+    }
+
+    /**
      * Gets the public 'Masterminds\HTML5' shared autowired service.
      *
      * @return \Masterminds\HTML5
@@ -7461,6 +7472,7 @@ class DependencyInjectionContainer_5684150283a31947276bdb69f993849693b74605 exte
         $a->addListener('TYPO3\\CMS\\Backend\\Backend\\Event\\SystemInformationToolbarCollectorEvent', 'TYPO3\\CMS\\Belog\\Controller\\SystemInformationController', 'appendMessage', 'belog/show-latest-errors');
         $a->addListener('TYPO3\\CMS\\Backend\\Backend\\Event\\SystemInformationToolbarCollectorEvent', 'BK2K\\BootstrapPackage\\Backend\\ToolbarItem\\VersionToolbarItem', NULL, 'bk2k/bootstrap-package/add-version-information');
         $a->addListener('TYPO3\\CMS\\Backend\\Backend\\Event\\SystemInformationToolbarCollectorEvent', 'TYPO3\\CMS\\Scheduler\\SystemInformation\\ToolbarItemProvider', 'getItem', 'scheduler/show-latest-errors');
+        $a->addListener('TYPO3\\CMS\\Backend\\Backend\\Event\\SystemInformationToolbarCollectorEvent', 'Dkd\\CustomizationKit\\SystemInformation\\ProjectVersion', 'appendMessage', 'tx-dkd-customization-kit-version');
         $a->addListener('TYPO3\\CMS\\Backend\\Module\\BeforeModuleCreationEvent', 'TYPO3\\CMS\\Extbase\\EventListener\\AddDefaultModuleIcon', NULL, 'extbase/add-default-extbase-module-icon');
         $a->addListener('TYPO3\\CMS\\Core\\Page\\Event\\ResolveJavaScriptImportEvent', 'TYPO3\\CMS\\Backend\\ContextMenu\\ImportMapConfigurator', NULL, 'TYPO3\\CMS\\Backend\\ContextMenu\\ImportMapConfigurator');
         $a->addListener('TYPO3\\CMS\\Backend\\Controller\\Event\\AfterBackendPageRenderEvent', 'TYPO3\\CMS\\Backend\\EventListener\\AfterBackendPageRenderEventListener', NULL, 'TYPO3\\CMS\\Backend\\EventListener\\AfterBackendPageRenderEventListener');
