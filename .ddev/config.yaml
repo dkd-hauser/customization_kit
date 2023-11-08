@@ -17,7 +17,16 @@ use_dns_when_possible: true
 timezone: Europe/Berlin
 composer_version: "2"
 disable_settings_management: true
-web_environment: []
+web_environment:
+    - TYPO3_DISABLE_CORE_UPDATER=1
+    - TYPO3_CONTEXT=Development/DDEV
+    - TYPO3_INSTALL_TOOL_PASSWORD=$$argon2i$$v=19$$m=65536,t=16,p=1$$R3BBQUk5V0RnMW4zZkdTSg$$ZyWKI/SQn3MtcHRfLXqVjJKqC+4W4FIH4sG1TVi9Tl4
+    - TYPO3_DB_USER=db
+    - TYPO3_DB_PASSWORD=db
+    - TYPO3_DB_HOST=db
+    - TYPO3_DB_PORT=3306
+    - TYPO3_DB_NAME=db
+    - DOMAIN_SERVER_0=${DDEV_SITENAME}.${DDEV_TLD}
 nodejs_version: "18"
 
 # Key features of DDEV's config.yaml:

@@ -13,3 +13,18 @@
 <IfModule mod_authz_core.c>
 	Require all denied
 </IfModule>
+
+<IfModule mod_rewrite.c>
+
+    # Enable URL rewriting
+    RewriteEngine On
+
+    RewriteCond $0#%{REQUEST_URI} ([^#]*)#(.*)\1$
+    RewriteRule ^.*$ - [E=CWD:%2]
+
+    RewriteCond %{HTTP_HOST} ^customization-kit\.ddev\.site$
+    RewriteRule .? - [E=TYPO3_CONTEXT:Development/DDEV]
+    RewriteCond %{HTTP_HOST} ^admin\.siva-creative\.de$
+    RewriteRule .? - [E=TYPO3_CONTEXT:Production]
+
+</IfModule>
