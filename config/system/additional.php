@@ -19,13 +19,14 @@ switch (\TYPO3\CMS\Core\Core\Environment::getContext()) {
         );
         break;
 
+    /* Add additional configuration for each application context (stage) */
     case 'Production':
         $GLOBALS['TYPO3_CONF_VARS']['SYS']['displayErrors'] = 0;
         $GLOBALS['TYPO3_CONF_VARS']['SYS']['sitename'] = $GLOBALS['TYPO3_CONF_VARS']['SYS']['sitename'].= " Production";
 
         /* Include unversioned stage specific configuration file */
         require_once(
-            \TYPO3\CMS\Core\Core\Environment::getProjectPath() . '/config/production/db_settings_production.php'
+            \TYPO3\CMS\Core\Core\Environment::getProjectPath() . '/config/deployment/db_settings_production.php'
         );
         break;
 }
