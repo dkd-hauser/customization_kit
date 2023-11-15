@@ -19,29 +19,14 @@ switch (\TYPO3\CMS\Core\Core\Environment::getContext()) {
         );
         break;
 
+    /* Add additional configuration for each application context (stage) */
     case 'Production':
         $GLOBALS['TYPO3_CONF_VARS']['SYS']['displayErrors'] = 0;
         $GLOBALS['TYPO3_CONF_VARS']['SYS']['sitename'] = $GLOBALS['TYPO3_CONF_VARS']['SYS']['sitename'].= " Production";
-        
-        $GLOBALS['TYPO3_CONF_VARS']['DB']['Connections']['Default'] = array_merge(
-            isset($GLOBALS['TYPO3_CONF_VARS']['DB']['Connections']['Default'])
-                ? $GLOBALS['TYPO3_CONF_VARS']['DB']['Connections']['Default']
-                : [],
-            [
-                'charset' => 'utf8mb4',
-                'dbname' => 'admin_11',
-                'driver' => 'mysqli',
-                'host' => 'localhost',
-                'password' => '50WuDibBVWXr0Qc',
-                'port' => 3306,
-                'tableoptions' => [
-                    'charset' => 'utf8mb4',
-                    'collate' => 'utf8mb4_unicode_ci',
-                ],
-                'user' => 'db',
-            ]
+
+        /* Include unversioned stage specific configuration file */
+        require_once(
+            \TYPO3\CMS\Core\Core\Environment::getProjectPath() . '/config/deployment/db_settings_production.php'
         );
         break;
 }
-
-

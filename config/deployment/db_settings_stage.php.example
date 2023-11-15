@@ -1,0 +1,24 @@
+<?php
+
+// Setup DB Configuration and rename file.
+// Save the configuration file on the relevant stage/server.
+// Never transfer files that contain secrets to shared repositories!
+
+$GLOBALS['TYPO3_CONF_VARS']['DB']['Connections']['Default'] = array_merge(
+    isset($GLOBALS['TYPO3_CONF_VARS']['DB']['Connections']['Default'])
+        ? $GLOBALS['TYPO3_CONF_VARS']['DB']['Connections']['Default']
+        : [],
+    [
+        'charset' => 'utf8mb4',
+        'dbname' => 'add dbname',
+        'driver' => 'mysqli',
+        'host' => 'add hostname',
+        'password' => 'add password',
+        'port' => 3306,
+        'tableoptions' => [
+            'charset' => 'utf8mb4',
+            'collate' => 'utf8mb4_unicode_ci',
+        ],
+        'user' => 'db',
+    ]
+);
